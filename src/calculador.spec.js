@@ -7,4 +7,7 @@ describe("calcular", () => {
   it("deberia calcular el precio neto de precio 100 y unidades 500 con el impuesto de CA", () => {
     expect(calcular(100, 500, "CA")).toEqual(54125);
   });
+  it("deberia calcular el precio neto de precio 100 y unidades 500 con el impuesto de UT", () => {
+    expect(calcular(100, 500, "UT")).toEqual(53325);
+  });
 });
