@@ -37,7 +37,10 @@ describe("calcular", () => {
   it("deberia calcular el precio neto con descuento y impuesto de varios que es 0%", () => {
     expect(calcular(10, 200, "", "Varios" )).toEqual(2000);
   });
-  it("deberia calcular el precio neto con descuento y impuesto de alimentos que es 2%", () => {
+  it("deberia calcular el precio neto con descuento  de alimentos que es 2%", () => {
     expect(calcular(10, 200, "", "Alimentos" )).toEqual(1960);
+  });
+  it("deberia calcular el precio neto con impuesto de bebidas alcoholicas que es 7%", () => {
+    expect(calcular(10, 200, "", "Bebidas alcoholicas" )).toEqual(2140);
   });
 });
