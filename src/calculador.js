@@ -1,11 +1,12 @@
+import calcularPrecioNeto from './calculadorPrecioNeto';
 function calcular(precio, cantidad, estado) {
-  var neto = precio * cantidad;
+  var neto = calcularPrecioNeto(precio, cantidad);
   var impuesto = calcularImpuestoPorEstado(neto, estado);
   var descuento = calcularDescuentoPorPrecioNeto(neto);
   return neto + impuesto - descuento;
 }
-function calcularImpuestoPorEstado(neto, estado){
 
+function calcularImpuestoPorEstado(neto, estado){
   if (estado == "CA") {
     return neto * 8.25 / 100;
   } 
@@ -25,6 +26,7 @@ function calcularImpuestoPorEstado(neto, estado){
     return 0;
   }
 }
+
 function calcularDescuentoPorPrecioNeto(neto){
   if (neto == 1000) {
     return neto * 3.00 / 100;
