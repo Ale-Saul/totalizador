@@ -16,11 +16,6 @@ function calcularImpuestoDescuentoCategoria(neto, categoria){
         descuento = neto * 1.50 / 100;
         return impuesto - descuento;
     }
-    else if (categoria == "Electronicos"){
-        descuento = neto * 1.00 / 100;
-        impuesto = neto * 4.00 / 100;
-        return impuesto - descuento;
-    }
     else {
         return 0;
     }
