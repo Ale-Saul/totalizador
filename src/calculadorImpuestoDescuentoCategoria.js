@@ -16,6 +16,15 @@ function calcularImpuestoDescuentoCategoria(neto, categoria){
         descuento = neto * 1.50 / 100;
         return impuesto - descuento;
     }
+    else if (categoria == "Muebles"){
+        impuesto = neto * 3.00 / 100;
+        return impuesto - descuento;
+    }
+    else if (categoria == "Electronicos"){
+        impuesto = neto * 4.00 / 100;
+        descuento = neto * 1.00 / 100;
+        return impuesto - descuento;
+    }
     else {
         return 0;
     }
