@@ -19,7 +19,8 @@ describe("calcular", () => {
   it("deberia calcular el precio neto de precio 10 y unidades 50 con el impuesto de AL", () => {
     expect(calcular(10, 50, "AL")).toEqual(520);
   });
-  it("deberia calcular el precio neto de precio 10 y unidades 1000 con un descuento de 3%", () => {
-    expect(calcular(10, 1000, "")).toEqual(9700);
+  it("deberia calcular el precio neto de precio 10 y unidades 100 con un descuento de 3%", () => {
+    expect(calcular(10, 100, "")).toEqual(970);
   });
+  
 });

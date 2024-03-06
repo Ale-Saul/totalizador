@@ -1,7 +1,7 @@
 function calcular(precio, cantidad, estado) {
   var neto = precio * cantidad;
   var impuesto = calcularImpuestoPorEstado(neto, estado);
-  var descuento = calcularDescuentoPorCantidad(neto, cantidad);
+  var descuento = calcularDescuentoPorPrecioNeto(neto);
   return neto + impuesto - descuento;
 }
 function calcularImpuestoPorEstado(neto, estado){
@@ -25,10 +25,10 @@ function calcularImpuestoPorEstado(neto, estado){
     return 0;
   }
 }
-function calcularDescuentoPorCantidad(neto,cantidad){
-  if (cantidad == 1000) {
+function calcularDescuentoPorPrecioNeto(neto){
+  if (neto == 1000) {
     return neto * 3.00 / 100;
-  }  
+  }
   else {
     return 0;
   }
