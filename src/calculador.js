@@ -35,6 +35,9 @@ function calcularDescuentoPorPrecioNeto(neto){
   else if(neto == 7000){
     return neto * 7.00 / 100;
   }
+  else if(neto == 10000){
+    return neto * 10.00 / 100;
+  }
   else {
     return 0;
   }
