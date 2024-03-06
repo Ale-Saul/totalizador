@@ -43,4 +43,7 @@ describe("calcular", () => {
   it("deberia calcular el precio neto con impuesto de bebidas alcoholicas que es 7%", () => {
     expect(calcular(10, 200, "", "Bebidas alcoholicas" )).toEqual(2140);
   });
+  it("deberia calcular el precio neto con descuento de material de escritorio que es 1.5%", () => {
+    expect(calcular(10, 200, "", "Material de escritorio" )).toEqual(1970);
+  });
 });
