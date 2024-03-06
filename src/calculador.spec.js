@@ -31,4 +31,7 @@ describe("calcular", () => {
   it("deberia calcular el precio neto de precio 10 y unidades 1000 con un descuento de 10%", () => {
     expect(calcular(10, 1000, "")).toEqual(9000);
   });
+  it("deberia calcular el precio neto de precio 10 y unidades 3000 con un descuento de 15%", () => {
+    expect(calcular(10, 3000, "")).toEqual(25500);
+  });
 });
