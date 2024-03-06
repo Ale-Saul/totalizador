@@ -25,6 +25,10 @@ function calcularImpuestoDescuentoCategoria(neto, categoria){
         descuento = neto * 1.00 / 100;
         return impuesto - descuento;
     }
+    else if (categoria == "Vestimenta"){
+        impuesto = neto * 2.00 / 100;
+        return impuesto - descuento;
+    }
     else {
         return 0;
     }

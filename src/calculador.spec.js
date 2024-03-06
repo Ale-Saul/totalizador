@@ -52,4 +52,7 @@ describe("calcular", () => {
   it("deberia calcular el precio neto con descuento y impuesto de varios que es 1%y 4%", () => {
     expect(calcular(10, 200, "", "Electronicos" )).toEqual(2060);
   });
+  it("deberia calcular el precio neto con impuesto de varios que es 2%", () => {
+    expect(calcular(10, 200, "", "Vestimenta" )).toEqual(2040);
+  });
 });
