@@ -12,6 +12,9 @@ function calcular(precio, cantidad, estado) {
   else if(estado =="TX"){
     return neto + neto * 6.25 / 100;
   }
+  else if(estado =="AL"){
+    return neto + neto * 4.00 / 100;
+  }
   else{
     return neto;
   }
