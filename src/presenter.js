@@ -5,6 +5,7 @@ import calcularDescuentoPrecioNeto from "./calculadorDescuentoPorPrecioNeto";
 import calcularImpuestoDescuentoCategoria from "./calculadorImpuestoDescuentoCategoria";
 import calcularDescuentoEnvio from "./calculadorDescuentoEnvio";
 import calcularCostoEnvio from "./calculadorCostoEnvio";
+import calcularDescuentoEspecial from "./calculadorDescuentoEspecial";
 
 const inputPrecio = document.querySelector("#precio");
 const inputCantidad = document.querySelector("#cantidad");
@@ -19,6 +20,7 @@ const divImpuesto = document.querySelector("#impuesto-div");
 const divImpuestoDescuentoCategoria = document.querySelector("#impuestoDescuento-div");
 const divCostoEnvio = document.querySelector("#envio-div");
 const divDescuentoEnvio = document.querySelector("#descuentoEnvio-div");
+const divDescuentoEspecial = document.querySelector("#descuentoEspecial-div");
 const divPrecioTotal = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
@@ -37,8 +39,8 @@ form.addEventListener("submit", (event) => {
   const impuestoDescuentoCategoria = calcularImpuestoDescuentoCategoria(neto, categoria);
   const envio = calcularCostoEnvio(peso);
   const descuentoEnvio = calcularDescuentoEnvio(envio, cliente);
-  
-  const total = calcular(precio, cantidad, estado, categoria, peso, descuentoEnvio);
+  const descuentoEspecial = calcularDescuentoEspecial(neto, categoria, cliente);
+  const total = calcular(precio, cantidad, estado, categoria, peso, cliente);
 
   divPrecioNeto.innerHTML = "<p> Precio Neto: " + neto + "</p>";
   divDescuento.innerHTML = "<p> Descuento: " + descuento + "</p>";
@@ -46,5 +48,6 @@ form.addEventListener("submit", (event) => {
   divImpuestoDescuentoCategoria.innerHTML = "<p> Impuesto o Descuento por Categoria: " + impuestoDescuentoCategoria + "</p>";
   divCostoEnvio.innerHTML = "<p> Costo de Envio: " + envio + "</p>";
   divDescuentoEnvio.innerHTML = "<p> Descuento de Envio: " + descuentoEnvio + "</p>";
+  divDescuentoEspecial.innerHTML = "<p> Descuento Especial: " + descuentoEspecial + "</p>";
   divPrecioTotal.innerHTML = "<p> Precio Total: " + total + "</p>";
 });

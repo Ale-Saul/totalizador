@@ -6,6 +6,9 @@ function calcularDescuentoEspecial(neto, categoria, cliente)
     else if (neto > 7000 && categoria === "Electronicos" && cliente === "especial"){
         return 200;
     }
+    else {
+        return 0;
+    }
 }
 
 export default calcularDescuentoEspecial;
