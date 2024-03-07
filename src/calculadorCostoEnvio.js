@@ -17,6 +17,9 @@ function calculadorCostoEnvio(peso) {
     else if(peso > 100 && peso <= 200){
         return 8;
     }
+    else if(peso > 200){
+        return 9;
+    }
 }
 
 export default calculadorCostoEnvio;
