@@ -8,5 +8,8 @@ function calcularDescuentoEnvio(precio, tipoCliente){
     else if (tipoCliente === "antiguo"){
         return precio * 0.01;
     }
+    else if (tipoCliente === "especial"){
+        return precio * 0.015;
+    }
 }
 export default calcularDescuentoEnvio;
