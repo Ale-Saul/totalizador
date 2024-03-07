@@ -2,13 +2,13 @@ import calcular from "./calculador.js";
 
 describe("calcular", () => {
   it("deberia calcular el precio neto de precio 100 y unidades 500", () => {
-    expect(calcular(100, 500)).toEqual(50000);
+    expect(calcular(100, 500)).toEqual(42500);
   });
   it("deberia calcular el precio neto de precio 100 y unidades 500 con el impuesto de CA", () => {
-    expect(calcular(100, 500, "CA", "")).toEqual(54125);
+    expect(calcular(100, 500, "CA", "")).toEqual(46625);
   });
   it("deberia calcular el precio neto de precio 100 y unidades 500 con el impuesto de UT", () => {
-    expect(calcular(100, 500, "UT", "")).toEqual(53325);
+    expect(calcular(100, 500, "UT", "")).toEqual(45825);
   });
   it("deberia calcular el precio neto de precio 10 y unidades 50 con el impuesto de NV", () => {
     expect(calcular(10, 50, "NV", "")).toEqual(540);
@@ -35,24 +35,24 @@ describe("calcular", () => {
     expect(calcular(10, 3000, "", "")).toEqual(25500);
   });
   it("deberia calcular el precio neto con descuento y impuesto de varios que es 0%", () => {
-    expect(calcular(10, 200, "", "Varios" )).toEqual(2000);
+    expect(calcular(10, 200, "", "Varios" )).toEqual(1940);
   });
   it("deberia calcular el precio neto con descuento  de alimentos que es 2%", () => {
-    expect(calcular(10, 200, "", "Alimentos" )).toEqual(1960);
+    expect(calcular(10, 200, "", "Alimentos" )).toEqual(1900);
   });
   it("deberia calcular el precio neto con impuesto de bebidas alcoholicas que es 7%", () => {
-    expect(calcular(10, 200, "", "Bebidas alcoholicas" )).toEqual(2140);
+    expect(calcular(10, 200, "", "Bebidas alcoholicas" )).toEqual(2080);
   });
   it("deberia calcular el precio neto con descuento de material de escritorio que es 1.5%", () => {
-    expect(calcular(10, 200, "", "Material de escritorio" )).toEqual(1970);
+    expect(calcular(10, 200, "", "Material de escritorio" )).toEqual(1910);
   });
   it("deberia calcular el precio neto con impuesto de muebles que es 3%", () => {
-    expect(calcular(10, 200, "", "Muebles" )).toEqual(2060);
+    expect(calcular(10, 200, "", "Muebles" )).toEqual(2000);
   });
-  it("deberia calcular el precio neto con descuento y impuesto de varios que es 1%y 4%", () => {
-    expect(calcular(10, 200, "", "Electronicos" )).toEqual(2060);
+  it("deberia calcular el precio neto con descuento y impuesto de varios que es 1% y 4%", () => {
+    expect(calcular(10, 200, "", "Electronicos" )).toEqual(2000);
   });
   it("deberia calcular el precio neto con impuesto de varios que es 2%", () => {
-    expect(calcular(10, 200, "", "Vestimenta" )).toEqual(2040);
+    expect(calcular(10, 200, "", "Vestimenta" )).toEqual(1980);
   });
 });
