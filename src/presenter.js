@@ -33,21 +33,27 @@ form.addEventListener("submit", (event) => {
   const peso = Number.parseInt(inputPeso.value);
   const cliente = inputCliente.value;
 
-  const neto = calcularPrecioNeto(precio, cantidad);
-  const descuento = calcularDescuentoPrecioNeto(neto);
-  const impuesto = calcularImpuestoPorEstado(neto, estado);
-  const impuestoDescuentoCategoria = calcularImpuestoDescuentoCategoria(neto, categoria);
-  const envio = calcularCostoEnvio(peso);
-  const descuentoEnvio = calcularDescuentoEnvio(envio, cliente);
-  const descuentoEspecial = calcularDescuentoEspecial(neto, categoria, cliente);
-  const total = calcular(precio, cantidad, estado, categoria, peso, cliente);
+  if (precio <= 0 || cantidad <= 0 || peso <= 0) {
+    alert("Los valores de precio, cantidad y peso deben ser mayores a 0");
+    return;
+  }
+  else{
+    const neto = calcularPrecioNeto(precio, cantidad);
+    const descuento = calcularDescuentoPrecioNeto(neto);
+    const impuesto = calcularImpuestoPorEstado(neto, estado);
+    const impuestoDescuentoCategoria = calcularImpuestoDescuentoCategoria(neto, categoria);
+    const envio = calcularCostoEnvio(peso);
+    const descuentoEnvio = calcularDescuentoEnvio(envio, cliente);
+    const descuentoEspecial = calcularDescuentoEspecial(neto, categoria, cliente);
+    const total = calcular(precio, cantidad, estado, categoria, peso, cliente);
 
-  divPrecioNeto.innerHTML = "<p> Precio Neto: " + neto + "</p>";
-  divDescuento.innerHTML = "<p> Descuento: " + descuento + "</p>";
-  divImpuesto.innerHTML = "<p> Impuesto: " + impuesto + "</p>";
-  divImpuestoDescuentoCategoria.innerHTML = "<p> Impuesto o Descuento por Categoria: " + impuestoDescuentoCategoria + "</p>";
-  divCostoEnvio.innerHTML = "<p> Costo de Envio: " + envio + "</p>";
-  divDescuentoEnvio.innerHTML = "<p> Descuento de Envio: " + descuentoEnvio + "</p>";
-  divDescuentoEspecial.innerHTML = "<p> Descuento Especial: " + descuentoEspecial + "</p>";
-  divPrecioTotal.innerHTML = "<p> Precio Total: " + total + "</p>";
+    divPrecioNeto.innerHTML = "<p> Precio Neto: " + neto + "</p>";
+    divDescuento.innerHTML = "<p> Descuento: " + descuento + "</p>";
+    divImpuesto.innerHTML = "<p> Impuesto: " + impuesto + "</p>";
+    divImpuestoDescuentoCategoria.innerHTML = "<p> Impuesto o Descuento por Categoria: " + impuestoDescuentoCategoria + "</p>";
+    divCostoEnvio.innerHTML = "<p> Costo de Envio: " + envio + "</p>";
+    divDescuentoEnvio.innerHTML = "<p> Descuento de Envio: " + descuentoEnvio + "</p>";
+    divDescuentoEspecial.innerHTML = "<p> Descuento Especial: " + descuentoEspecial + "</p>";
+    divPrecioTotal.innerHTML = "<p> Precio Total: " + total + "</p>";
+  }
 });
