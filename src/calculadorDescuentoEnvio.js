@@ -3,7 +3,10 @@ function calcularDescuentoEnvio(precio, tipoCliente){
         return 0;
     }
     else if (tipoCliente === "recurrente"){
-        return 0.5;
+        return precio * 0.005;
+    }
+    else if (tipoCliente === "antiguo"){
+        return precio * 0.01;
     }
 }
 export default calcularDescuentoEnvio;
