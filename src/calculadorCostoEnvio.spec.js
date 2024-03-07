@@ -16,4 +16,7 @@ describe('calculadorCostoEnvio', () => {
     it('deberia calcular el costo de envio de un paquete de 85kg', () => {
         expect(calcularCostoEnvio(85)).toEqual(6.5);
     });
+    it('deberia calcular el costo de envio de un paquete de 150kg', () => {
+        expect(calcularCostoEnvio(150)).toEqual(8);
+    });
 });
