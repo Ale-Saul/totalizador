@@ -11,5 +11,8 @@ function calcularDescuentoEnvio(precio, tipoCliente){
     else if (tipoCliente === "especial"){
         return precio * 0.015;
     }
+    else {
+        return 0;
+    }
 }
 export default calcularDescuentoEnvio;
